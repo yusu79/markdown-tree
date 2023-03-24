@@ -11,7 +11,7 @@
 
 
 ## 2.インストール
-「**<> Code**」から「**Download ZIP**」をクリックしてダウンロードしてください｡
+「**Releases**」から`zip`ないしは`tar.gz`をダウンロードしてください｡
 
 `markdown-tree.sh`を`markdonw-tree`に名前変更して､PATHが通っているフォルダに移動すれば､ターミナルから実行できます｡
 
