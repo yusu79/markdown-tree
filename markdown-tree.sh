@@ -1,26 +1,31 @@
 #!/bin/bash
 set -eu
-# 使い方: markdown-tree [オプション] [Markdownファイル] [出力する階層]
-#
-#   説明: Markdownファイル(.md)の見出しをツリー状に変換して出力する
-#   引数:
-#    ・Markdownファイル     見出しをツリーで出力したいファイルを指定｡
-#    ・階層                 出力する階層を指定｡デフォルトは6(######)｡
-#
-#   オプション:
-#       -h         ヘルプを表示  
-#
 function usage() {
-    sed -rn '/^# 使い方/,${/^#/!q;s/^# ?//;p}' "$0"
-    exit
-}
-while getopts "h" opt;do
-  case $opt in
-      h) usage;;
-      *) echo -e "\n「-h」を使用してください。"; exit 1;;
-  esac
-done
+cat <<EOF
+使い方: markdown-tree [-h|--help] [-L|-l|--level 階層] [Markdownファイル]
 
+  説明:Markdownファイル(.md)の見出しをツリー状に変換して出力するコマンド
+  引数:
+    [Markdownファイル]  : 見出しをツリーで出力したいMarkdownファイルを引数に渡す
+
+  オプション:
+    -h|--help)         ヘルプを表示
+    -L|-l|--level)     指定した階層を表示(デフォルトは「6」)
+
+EOF
+}
+print_depth=6
+while [ -n "${1:-}" ]; do
+    case "$1" in
+      -h|--help) usage; exit 0;;
+      -L|-l|--level) print_depth=$2 ;;
+      -*) echo -e 'エラー : 不正なオプションです。「-h」を使用してください。'; exit 1;;
+      [0-9]) ;;
+      *) filename="$1";;
+      "") break;;
+    esac
+    shift
+done
 
 ## 処理部分
 
@@ -52,7 +57,6 @@ function print_branch() {
 
 ### Markdownを全体を読み込んで､「#」がある行をツリー状に出力する関数
 function print_tree() {
-  local filename="$1"
   local current_depth=0
   local last_depth=6
   local current_name=""
@@ -73,12 +77,12 @@ function print_tree() {
       print_branch $current_depth "$current_name"
     fi
     last_depth=$current_depth
-  done < <(grep "# " "$filename" | tac)
+  done < <(grep "# " "$1" | tac)
 }
 
-print_depth=${2:-6}
+### 実行部分
 if [[ $print_depth -lt 1 || $print_depth -gt 6 ]]; then
   echo "エラー : 階層は1から6までです｡"
   exit 1
 fi
-print_tree "$1" $print_depth | tac
+print_tree $filename $print_depth | tac
