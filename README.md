@@ -21,7 +21,7 @@ $ sudo apt update && sudo apt install markdown-tree
 
 ## 3.使い方
 ```bash:使い方
-$ markdown-tree 【foo.md】
+$ markdown-tree【オプション】【foo.md】
 ```
 
 例として､この「**README.md**」の構造を出力してみる｡
