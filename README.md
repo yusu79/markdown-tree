@@ -1,6 +1,7 @@
 # markdown-tree
 ![license](https://img.shields.io/github/license/yusu79/markdown-tree)
 ![languges](https://img.shields.io/github/languages/top/yusu79/markdown-tree)
+![ppa](https://img.shields.io/badge/PPA-ppa:yusu79/markdown-tree.svg)
 
 
 
@@ -11,18 +12,17 @@
 
 
 ## 2.インストール
-「**Releases**」から`zip`ないしは`tar.gz`をダウンロードしてください｡
-
-`markdown-tree.sh`を`markdonw-tree`に名前変更して､PATHが通っているフォルダに移動すれば､ターミナルから実行できます｡
+```bash:インストール
+$ sudo add-apt-repository ppa:yusu79/markdown-tree
+$ sudo apt update && sudo apt install markdown-tree
+```
 
 
 
 ## 3.使い方
 ```bash:使い方
-$ markdown-tree 【foo.md】 【出力したい階層】
+$ markdown-tree 【foo.md】
 ```
-引数に渡したMarkdownファイルを読み込み､出力したい階層(`#`の数)まで`tree`状で出力する｡
-出力したい階層は､省略可で､デフォルトは「6(`#######`まで出力)」｡
 
 例として､この「**README.md**」の構造を出力してみる｡
 ```bash:「README.md」を出力
