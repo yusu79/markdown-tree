@@ -42,4 +42,5 @@ MITライセンス
 ## 5.作者情報
 - [Twitter](https://l.pg1x.com/p5xn)
 - [Qiita](https://l.pg1x.com/tGxZ)
+- [はてなブログ](https://l.pg1x.com/yFNF)
 
