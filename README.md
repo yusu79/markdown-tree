@@ -11,7 +11,7 @@
 `markdown-tree foo.md`とターミナルで入力すれば､Markdownファイルの見出し(`#`や`##`など)を読み込み､それぞれの「`#`」の数に応じて､自動で`tree`コマンド形式で出力してくれます｡
 
 
-## 2.インストール
+## 2.Install
 ```bash:インストール
 $ sudo add-apt-repository ppa:yusu79/markdown-tree
 $ sudo apt update && sudo apt install markdown-tree
@@ -19,7 +19,7 @@ $ sudo apt update && sudo apt install markdown-tree
 
 
 
-## 3.使い方
+## 3.Usage
 ```bash:使い方
 $ markdown-tree【オプション】【foo.md】
 ```
@@ -36,7 +36,7 @@ $ markdown-tree README.md
 ```
 
 
-## 4.ライセンス
+## 4.License
 MITライセンス
 
 ## 5.作者情報
