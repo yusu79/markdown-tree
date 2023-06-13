@@ -40,7 +40,7 @@ $ markdown-tree README.md
 MITライセンス
 
 ## 5.作者情報
-- [Twitter](https://l.pg1x.com/p5xn)
+- [Twitter](https://l.pg1x.com/kPSi)
 - [Qiita](https://l.pg1x.com/tGxZ)
 - [はてなブログ](https://l.pg1x.com/yFNF)
 
