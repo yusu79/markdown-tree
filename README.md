@@ -37,7 +37,7 @@ $ markdown-tree README.md
 
 
 ## 4.License
-MITライセンス
+The source code is licensed the [MIT LICENSE](https://l.pg1x.com/Uf1y).
 
 ## 5.作者情報
 - [Twitter](https://l.pg1x.com/kPSi)
